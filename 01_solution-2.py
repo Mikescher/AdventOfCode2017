@@ -5,11 +5,10 @@ import aoc
 
 rawinput = aoc.read_input(1)
 
-rawinput = rawinput + rawinput[0]
-
+inlen = len(rawinput)
 digitsum = 0
-for idx in range(1, len(rawinput)):
-    if rawinput[idx-1] == rawinput[idx]:
+for idx in range(0, inlen):
+    if rawinput[idx] == rawinput[(idx + inlen//2) % inlen]:
         digitsum = digitsum + int(rawinput[idx])
 
 print(digitsum)
